@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDIT</title>
+</head>
+<body>
+<form method='post'>{% csrf_token %}
+
+    <label for="education"><b>education</b></label>
+    <input type="text" placeholder= "Enter education" name="education" required>
+
+    <label for="experience"><b>experience</b></label>
+    <input type="text" placeholder= "Enter experience" name="experience" required>
+
+
+    <label for="firstname"><b>firstname</b></label>
+    <input type="text" placeholder= "Enter firstname" name="firstname" required>
+
+
+    <label for="lastame"><b>lastname</b></label>
+    <input type="text" placeholder= "Enter lastname" name="lastname" required>
+
+
+    <label for="designation"><b>designation</b></label>
+    <input type="text" placeholder= "Enter designation" name="designation" required>
+
+
+    <label for="assignedclass"><b>assignedclass</b></label>
+    <input type="text" placeholder= "Enter assignedclass" name="assignedclass" required>
+
+
+    <label for="bloodgroup"><b>bloodgroup</b></label>
+    <input type="text" placeholder= "Enter bloodgroup" name="bloodgroup" required>
+
+
+    <label for="gender"><b>gender</b></label>
+    <input type="text" placeholder= "Enter gender" name="gender" required>
+
+
+    <label for="emailaddress"><b>emailaddress</b></label>
+    <input type="text" placeholder= "Enter emailaddress" name="emailaddress" required>
+
+
+
+    <label for="phonenumber"><b>phonenumber</b></label>
+    <input type="text" placeholder= "Enter phonenumber" name="phonenumber" required>
+
+    <button type="submit">Update</button>
+    </form>
+</body>
+</html>

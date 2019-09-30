@@ -1,0 +1,187 @@
+{% extends 'admin.html' %}
+{% load staticfiles %}
+{% block content %}
+<html lang="en">
+
+<head>
+<!--    -->
+<!--    <h1>BOOK</h1>-->
+<!--    <a href="/library/school/" name="submit">addbook</a>-->
+
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+<!--    <title>Au Register Forms by Colorlib</title>-->
+
+    <!-- Icons font CSS-->
+    <link href="{% static 'admissionstatic/vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'admissionstatic/vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i,' %}" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'admissionstatic/vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'admissionstatic/vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'admissionstatic/css/main.css' %}"rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Registration Form</h2>
+                    <form method="POST">{% csrf_token %}
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Education</label>
+                                    <input class="input--style-4" type="text" name="education">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Experience</label>
+                                    <input class="input--style-4" type="text" name="experience">
+                                </div>
+                            </div>
+                        </div>
+                            <h3> BASIC DETAILS </h3>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">first name</label>
+                                    <input class="input--style-4" type="text" name="firstname">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">last name</label>
+                                    <input class="input--style-4" type="text" name="lastname">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="label">Designation</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="designation">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option>maths</option>
+                                    <option>Science</option>
+                                    <option>Hindi</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="label">Assigned class</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="assignedclass">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+
+
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+<!--                        <div class="p-t-15">-->     <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Blood Group</label>
+<!--                                    <div class="input-group-icon">-->
+                                        <input class="input--style-4 js-datepicker" type="text" name="bloodgroup">
+                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Gender</label>
+<!--                                    <div class="p-t-10">-->
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="gender">
+<!--                                    <option disabled="disabled" selected="selected">Choose option</option>-->
+                                    <option value="male">male</option>
+                                    <option value="female">female</option>
+                                </select>
+                                        <div class="select-dropdown"></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                                                            <h1>contact details </h1>
+
+                        </div>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Email Address</label>
+                                    <input class="input--style-4" type="email" name="emailaddress">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" type="text" name="phonenumber">
+                                </div>
+                            </div>
+                        </div>
+<!--                        <div class="input-group">-->
+<!--                            <label class="label">Subject</label>-->
+<!--                            <div class="rs-select2 js-select-simple select--no-search">-->
+<!--                                <select name="subject">-->
+<!--                                    <option disabled="disabled" selected="selected">Choose option</option>-->
+<!--                                    <option>Subject 1</option>-->
+<!--                                    <option>Subject 2</option>-->
+<!--                                    <option>Subject 3</option>-->
+<!--                                </select>-->
+<!--                                <div class="select-dropdown"></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="p-t-15">-->
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+{% endblock %}
+<!-- end document-->

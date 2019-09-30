@@ -1,0 +1,60 @@
+{% extends 'admin.html' %}
+{% block content %}
+<table style="width:100%" border="1">
+    <h1>TEACHER LIST</h1>
+  <tr>
+      <th>id</th>
+      <th>education</th>
+      <th>experience</th>
+      <th>firstname</th>
+      <th>lastname</th>
+      <th>designation</th>
+      <th>assignedclass</th>
+      <th>bloodgroup</th>
+      <th>gender</th>
+      <th>emailaddress</th>
+      <th>phonenumber</th>
+      <th>edit</th>
+      <th>delete</th>
+
+
+  </tr>
+
+    {% for i in key %}
+
+    <tr>
+      <td>{{i.id}}</td>
+      <td>{{i.Education}}</td>
+      <td>{{i.Experience}}</td>
+      <td>{{i.Firstname}}</td>
+      <td>{{i.Lastname}}</td>
+      <td>{{i.Designation}}</td>
+      <td>{{i.Assignedclass}}</td>
+      <td>{{i.Bloodgroup}}</td>
+      <td>{{i.Gender}}</td>
+      <td>{{i.Emailaddress}}</td>
+      <td>{{i.Phonenumber}}</td>
+
+
+
+    <td>
+        <a href="/school/editteacher/{{i.id}}/">
+                <button type="submit"> edit </button>
+            </a>
+
+
+    </td>
+
+        <td>
+            <form method="POST">{% csrf_token %}
+                <button type="submit" name="delete">delete</button>
+                <input name="delete" value="{{i.id}}" hidden>
+            </form>
+
+        </td>
+    </tr>
+{% endfor %}
+</table>
+
+
+{% endblock %}
